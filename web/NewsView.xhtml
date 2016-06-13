@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./Haberturk.xhtml">
+            <ui:define name="top">
+                <h:form>
+                    <h5>
+                        <b>
+                            <h:form>
+                                <h:outputLink value="Haberturk.xhtml">&lt; Ana Sayfa</h:outputLink>
+                            </h:form>
+                        </b>
+                    </h5>
+                </h:form>
+                <center>
+                    <h2><b>News View</b></h2>
+                </center>
+            </ui:define>
+
+            <ui:define name="left">
+                <center>
+                    <h2>
+                        <b>
+                            <h:form>
+                                <h:outputLink value="NewsList.xhtml">&lt; Haberler</h:outputLink><br/><br/><br/>
+                            </h:form>
+                        </b>
+                    </h2>
+                </center>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form>
+                    <center>
+                        <h:panelGrid columns="1">
+                            <h:outputText value="#{newsViewBean.news.newsTitle}"/>
+                        </h:panelGrid> <br/><br/>
+
+                        <h:dataTable value="#{subNewsListBean.subNewsList}" var="list">
+                            <h:column>
+                                <h:outputText value="@"/>
+                            </h:column>
+                            <h:column>
+                                <h:outputLink value="SubNewsView.xhtml">
+                                    <h:outputText value="#{list.subNewsTitle}"/>
+                                    <f:param name="subNewsId" value="#{list.subNewsId}"/>
+                                    <f:param name="newsId" value="#{newsViewBean.news.newsId}"/>
+                                </h:outputLink>
+                            </h:column>
+                        </h:dataTable>
+                    </center>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Haberturk Gazetesi</title>
+    </h:head>
+
+    <h:body><center>
+            <table width="850px" height="500px" border="1">
+                <tr height="50px">
+                    <td colspan="2">
+                        <ui:insert name="top">
+                            <center>Ana Sayfa</center>
+                        </ui:insert>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">
+                        <ui:insert name="left">
+                            <h:form>
+                                <center>
+                                    <h2>
+                                        <h:outputLink value="NewsList.xhtml">Haberler</h:outputLink>
+                                    </h2> 
+                                </center>
+                            </h:form>
+                        </ui:insert>
+                    </td>
+                    <td>
+                        <ui:insert name="content">
+                            <center>
+                                <h5>
+                                    Haberturk Gazetesi'ne Hoşgeldiniz
+                                </h5>
+                            </center>
+                        </ui:insert>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </h:body>
+</html>
